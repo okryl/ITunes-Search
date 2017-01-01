@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="YS_ITunes" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="9YA-z3-cDf"/>
+                <outlet property="searchBar" destination="TwH-8o-M5E" id="2sD-qt-4oN"/>
+                <outlet property="tableViewSearch" destination="kQQ-9F-j6X" id="q7u-gD-F3T"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Please enter the text" translatesAutoresizingMaskIntoConstraints="NO" id="TwH-8o-M5E">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="xaG-P0-hpl"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kQQ-9F-j6X">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TwH-8o-M5E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="53h-ig-J7g"/>
+                <constraint firstItem="TwH-8o-M5E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5e1-Gh-RbJ"/>
+                <constraint firstAttribute="bottom" secondItem="kQQ-9F-j6X" secondAttribute="bottom" id="GyS-h1-e1K"/>
+                <constraint firstAttribute="trailing" secondItem="kQQ-9F-j6X" secondAttribute="trailing" id="OZo-6z-tDR"/>
+                <constraint firstItem="kQQ-9F-j6X" firstAttribute="top" secondItem="TwH-8o-M5E" secondAttribute="bottom" id="WEc-89-ofr"/>
+                <constraint firstItem="kQQ-9F-j6X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="j4T-8A-aQx"/>
+                <constraint firstAttribute="trailing" secondItem="TwH-8o-M5E" secondAttribute="trailing" id="sMJ-qe-dUe"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="55.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

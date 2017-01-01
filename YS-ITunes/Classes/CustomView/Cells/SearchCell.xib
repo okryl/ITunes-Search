@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="SearchCell" customModule="YS_ITunes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myM-Rp-2k3">
+                        <rect key="frame" x="20" y="20" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="T48-zc-WkC"/>
+                            <constraint firstAttribute="height" constant="60" id="xmE-Gd-6L2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="369-vZ-hAU">
+                        <rect key="frame" x="98" y="20" width="214" height="25"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHe-Nq-8Vb">
+                        <rect key="frame" x="307.5" y="60.5" width="4.5" height="19.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="749" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wer-QB-Eel">
+                        <rect key="frame" x="98" y="59" width="5" height="21"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gHe-Nq-8Vb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wer-QB-Eel" secondAttribute="trailing" constant="10" id="1zg-DX-88w"/>
+                    <constraint firstItem="gHe-Nq-8Vb" firstAttribute="trailing" secondItem="369-vZ-hAU" secondAttribute="trailing" id="9fa-2Y-ppI"/>
+                    <constraint firstItem="myM-Rp-2k3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="aki-U2-o7t"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="369-vZ-hAU" secondAttribute="trailing" id="b1Z-aP-434"/>
+                    <constraint firstItem="369-vZ-hAU" firstAttribute="leading" secondItem="myM-Rp-2k3" secondAttribute="trailing" constant="18" id="f2O-4Q-9yb"/>
+                    <constraint firstItem="Wer-QB-Eel" firstAttribute="bottom" secondItem="myM-Rp-2k3" secondAttribute="bottom" id="fcu-wN-TsT"/>
+                    <constraint firstItem="myM-Rp-2k3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="huq-vW-Wc6"/>
+                    <constraint firstItem="Wer-QB-Eel" firstAttribute="leading" secondItem="369-vZ-hAU" secondAttribute="leading" id="jfT-Dv-KSS"/>
+                    <constraint firstItem="gHe-Nq-8Vb" firstAttribute="bottom" secondItem="Wer-QB-Eel" secondAttribute="bottom" id="knh-K7-FAk"/>
+                    <constraint firstItem="369-vZ-hAU" firstAttribute="top" secondItem="myM-Rp-2k3" secondAttribute="top" id="zd3-9D-ILt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageViewArtWork" destination="myM-Rp-2k3" id="lbJ-K3-fC7"/>
+                <outlet property="labelArtistName" destination="369-vZ-hAU" id="Vf1-4y-IJ4"/>
+                <outlet property="labelKind" destination="gHe-Nq-8Vb" id="cAq-N5-CsV"/>
+                <outlet property="labelTrackName" destination="Wer-QB-Eel" id="jpe-v5-krp"/>
+            </connections>
+            <point key="canvasLocation" x="99" y="84"/>
+        </tableViewCell>
+    </objects>
+</document>
