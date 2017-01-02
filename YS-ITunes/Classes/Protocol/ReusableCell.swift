@@ -10,6 +10,10 @@ import UIKit
 
 protocol ReusableCell: class {}
 
+
+/*
+ Custom cell identifier donmesini saglar. Storyboardda herhangi bir reuse identifier vermeye gerek yoktur. Bu methodlari kullanmak isteyen UITableViewCell ler ReusableCell protocolu saglamalidir
+ */
 extension ReusableCell where Self: UIView {
     
     static var ReuseIdentifier: String {

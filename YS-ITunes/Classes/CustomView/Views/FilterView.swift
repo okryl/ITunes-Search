@@ -18,6 +18,7 @@ class FilterView: BaseCustomView, NibLoadableView {
     var isActive = false
     fileprivate var selectedMedia = Media(rawValue: 0)
     
+    //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -29,6 +30,7 @@ class FilterView: BaseCustomView, NibLoadableView {
         setup()
     }
     
+    //MARK: - Setup UI
     private func setup() {
         nibSetup(FilterView.self)
        
@@ -42,17 +44,22 @@ class FilterView: BaseCustomView, NibLoadableView {
         let indexPath = IndexPath(item: 0, section: 0)
         tableViewFilter.selectRow(at: indexPath, animated: false, scrollPosition: .none)
     }
+    
+    //MARK: - Button Actions
     @IBAction func buttonDoneTapped(_ sender: Any) {
         delegate?.doneButtonTapped(media: selectedMedia!)
     }
 
 }
+
+//MARK: - UITableViewDelegate
 extension FilterView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedMedia = Media(rawValue: indexPath.row)
     }
 }
 
+//MARK: - UITableViewDataSource
 extension FilterView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

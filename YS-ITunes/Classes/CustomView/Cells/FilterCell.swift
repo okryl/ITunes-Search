@@ -26,6 +26,8 @@ class FilterCell: UITableViewCell, ReusableCell, NibLoadableView {
             backgroundColor = .clear
         }
     }
+    
+    //MARK: - Setup UI
     func setup(name: String!) {
         labelFilterName.text = name
         alpha = 0.5

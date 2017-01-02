@@ -8,8 +8,12 @@
 
 import UIKit
 
+/*
+ tableView.register ve tableView.dequeReuseCell methodlarinin protocol oriented ile generic yazilmis methodlaridir. Bu methodlari kullanmak isteyen cell ler ReusableCell ve NibLoadableView protocollerini saglamalidir. tableView.Register(Cell.self) ve tableView.DequeReusableCell(Cell.self) as! CellType ile cagrilir
+ */
+
 extension UITableView {
-        
+
     func Register<T: UITableViewCell>(_: T.Type) where T: ReusableCell, T: NibLoadableView {
         
         let nib = UINib(nibName: T.NibName, bundle: nil)

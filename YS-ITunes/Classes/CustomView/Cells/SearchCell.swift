@@ -20,6 +20,7 @@ class SearchCell: UITableViewCell, ReusableCell,NibLoadableView {
         // Initialization code
     }
     
+    //MARK: - Setup UI
     func setup(searchResult: SearchResult!) {
         labelArtistName.text = searchResult.artistName
         labelKind.text = searchResult.kind

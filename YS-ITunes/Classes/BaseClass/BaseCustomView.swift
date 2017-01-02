@@ -10,12 +10,15 @@ import UIKit
 
 
 class BaseCustomView: UIView {
-
     @IBOutlet weak var contentView: UIView!
 }
 
+/*
+ Custom viewleri nib ile cagirirken kolaylik saglar. Bu methodlari kullanmak icin viewlarin BaseCustomView'dan turemesi, contentView'i olmasi ve NibLoadableView protocolunu saglamasi lazimdir. Custom Viewlari UINib uzerinden cagirirken yazilan fazla kodu kisaltmak icin yazilmistir. nibSetup(View.self) ile nib yuklenir
+ */
 extension BaseCustomView {
-    
+   
+    //MARK: - Generic Functions
     private func loadViewFromNib<T: BaseCustomView>(_: T.Type) -> UIView where T: NibLoadableView {
      
         let bundle = Bundle(for: type(of: self))

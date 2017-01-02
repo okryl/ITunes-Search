@@ -2,7 +2,7 @@
 //  SearchView.swift
 //  YS-ITunes
 //
-//  Created by Omer Karayel on 29/12/16.
+//  Created by Omer Karayel on 30/12/16.
 //  Copyright © 2016 Omer Karayel. All rights reserved.
 //
 
@@ -30,6 +30,7 @@ class SearchView: BaseCustomView, NibLoadableView {
         }
     }
     
+    //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -41,18 +42,21 @@ class SearchView: BaseCustomView, NibLoadableView {
         setup()
     }
     
+    //MARK: - Setup UI
     private func setup() {
         nibSetup(SearchView.self)
         
         tableViewSearch.dataSource = self
         tableViewSearch.delegate = self
         tableViewSearch.Register(SearchCell.self)
+        tableViewSearch.tableFooterView = UIView(frame: .zero)
         
         searchBar.delegate = self
         
         addToolBar()
     }
- 
+    
+    //MARK: - Request Handler
     fileprivate func searchRequest(with searchText: String!) {
         ITunesSearchApi.sharedInstance().search(withText: searchText, offType: selectedMedia!, success: {(response) in
             
@@ -64,6 +68,7 @@ class SearchView: BaseCustomView, NibLoadableView {
     }
 }
 
+//MARK: - UITableViewDelegate
 extension SearchView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchBar.resignFirstResponder()
@@ -76,7 +81,7 @@ extension SearchView: UITableViewDelegate {
         return 100
     }
 }
-
+//MARK: - UITableViewDataSource
 extension SearchView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +92,6 @@ extension SearchView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableViewSearch.DequeReusableCell(forIndexPath: indexPath) as SearchCell
         cell.setup(searchResult: dataSource?.searchResults[indexPath.row])
         
@@ -95,6 +99,7 @@ extension SearchView: UITableViewDataSource {
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension SearchView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -116,6 +121,7 @@ extension SearchView: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
 }
+//MARK: - UITextFieldDelegate
 extension SearchView: UITextFieldDelegate {
     
     func addToolBar(){

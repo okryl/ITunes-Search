@@ -69,16 +69,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jdw-EH-qvH" customClass="DetailView" customModule="YS_ITunes" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="587"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jdw-EH-qvH" secondAttribute="trailing" id="1sI-8B-CRw"/>
-                            <constraint firstItem="Jdw-EH-qvH" firstAttribute="leading" secondItem="UdG-94-4ov" secondAttribute="leadingMargin" id="6J8-no-6Za"/>
-                            <constraint firstItem="l9i-ou-ULS" firstAttribute="top" secondItem="Jdw-EH-qvH" secondAttribute="bottom" constant="8" symbolic="YES" id="Apv-7y-KX1"/>
-                            <constraint firstItem="Jdw-EH-qvH" firstAttribute="top" secondItem="ONL-ga-i5C" secondAttribute="bottom" constant="8" id="MDg-dN-8mn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jdw-EH-qvH" secondAttribute="trailing" constant="-16" id="1sI-8B-CRw"/>
+                            <constraint firstItem="Jdw-EH-qvH" firstAttribute="leading" secondItem="UdG-94-4ov" secondAttribute="leadingMargin" constant="-16" id="6J8-no-6Za"/>
+                            <constraint firstItem="l9i-ou-ULS" firstAttribute="top" secondItem="Jdw-EH-qvH" secondAttribute="bottom" id="Apv-7y-KX1"/>
+                            <constraint firstItem="Jdw-EH-qvH" firstAttribute="top" secondItem="ONL-ga-i5C" secondAttribute="bottom" id="MDg-dN-8mn"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -99,7 +99,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NPb-kQ-mzK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.074509803921568626" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

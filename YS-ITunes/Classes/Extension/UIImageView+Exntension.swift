@@ -10,7 +10,9 @@ import UIKit
 
 extension UIImageView {
     
-    // Asenkron image download
+    /*
+     Asenkron image download, image download edilirken ortasinda loading doner
+     */
     func downloadFromUrl(with urlString: String) {
         
         if let url = URL(string: urlString) {

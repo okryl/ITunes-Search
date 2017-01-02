@@ -11,6 +11,9 @@ import Foundation
 typealias successBlock = (_ response: [String: AnyObject]) ->Void
 typealias failureBlock = (_ error: String) -> Void
 
+/*
+ Service cagrilari singleton bir method uzerinden cagrilmistir
+ */
 
 final class ITunesSearchApi: NSObject {
     
@@ -24,6 +27,7 @@ final class ITunesSearchApi: NSObject {
         return instance!
     }
     
+    //MARK: - Public Search Request
     func search(withText text: String, offType media: Media, success:@escaping successBlock, failure: @escaping failureBlock) {
         LoadingManager.sharedInstance().startIndicator()
         
@@ -33,6 +37,7 @@ final class ITunesSearchApi: NSObject {
         task.resume()
     }
     
+    //MARK: - Start Task
     private func startTask(withURL url: URL,success:@escaping successBlock, failure: @escaping failureBlock) -> URLSessionTask{
         return URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             
@@ -67,7 +72,9 @@ final class ITunesSearchApi: NSObject {
         })
         
     }
-    func buildUrl(searchText: String!, mediaType: Media!) -> URL? {
+    
+    //MARL: - Build Request URL
+    private func buildUrl(searchText: String!, mediaType: Media!) -> URL? {
         
         let text = searchText.replacingOccurrences(of: " ", with: "+")
         

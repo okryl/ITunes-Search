@@ -8,12 +8,14 @@
 
 import UIKit
 
-
+/*
+ Request atilirken ekranda loading gostermeyi saglar
+ */
 class LoadingManager: NSObject {
     
-
     private let blackView = UIView()
     private static var instance : LoadingManager?
+   
     var activityIndicator:UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         indicator.hidesWhenStopped = true

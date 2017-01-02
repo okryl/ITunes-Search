@@ -16,12 +16,13 @@ class HomeVC: UIViewController {
     @IBOutlet weak var viewFilterHeight: NSLayoutConstraint!
     @IBOutlet weak var viewFilterBottom: NSLayoutConstraint!
     
+    //MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
       
         viewFilter.delegate = self
         viewSearch.delegate = self
-        setupRightBarItem()
+        setupNavigationBar()
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,7 +30,8 @@ class HomeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupRightBarItem(){
+    //MARK: - Setup UI
+    private func setupNavigationBar(){
         let buttonRight = UIButton(type: .custom)
         buttonRight.setImage(#imageLiteral(resourceName: "icon_filter"), for: .normal)
         buttonRight.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
@@ -37,6 +39,8 @@ class HomeVC: UIViewController {
         
         let item = UIBarButtonItem(customView: buttonRight)
         navigationItem.rightBarButtonItem = item
+        
+        navigationItem.title = "Search"
     }
     
     func tapped() {
@@ -53,6 +57,7 @@ class HomeVC: UIViewController {
     }
 }
 
+//MARK: - Filter View Delegate
 extension HomeVC: FilterViewDelegate {
     func doneButtonTapped(media: Media) {
         viewSearch.selectedMedia = media
@@ -66,6 +71,8 @@ extension HomeVC: FilterViewDelegate {
         
     }
 }
+
+//MARK: - Search View Delegate
 extension HomeVC: SearchViewDelegate {
   
     func cellTapped(detailObject: SearchResult) {

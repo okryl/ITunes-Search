@@ -10,6 +10,10 @@ import UIKit
 
 protocol NibLoadableView: class { }
 
+/*
+ Nib isimlerini donmeyi saglar. Bunu kullanan UIViewlar NibLoadleView protocolunu saglamalidir.
+ */
+
 extension NibLoadableView where Self: UIView {
     
     static var NibName: String {

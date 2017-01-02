@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 extension NSObject {
-    
+    /*
+     Main Thread kisa yol. mainThread { } seklinde cagrilabilir
+     */
     func mainThread(main: @escaping () -> ()) {
         DispatchQueue.main.async(execute: {
             main()
